@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+httpx
+sqlalchemy
+passlib[bcrypt]
+python-jose
+python-multipart
+youtube-search
+bcrypt==3.2.0
