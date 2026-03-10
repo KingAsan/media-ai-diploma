@@ -206,12 +206,6 @@ async def download_app():
         "https://github.com/KingAsan/media-ai-diploma/releases/download/mediaAI/MediaAI.exe"
     )
 
-    return FileResponse(
-        path=download_file,
-        filename=download_file.name,
-        media_type="application/octet-stream",
-    )
-
 
 def find_trailer(title, category):
     try:
@@ -322,4 +316,5 @@ def get_chat_history(
 
 if __name__ == "__main__":
     uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
+
 
