@@ -203,7 +203,7 @@ from fastapi.responses import RedirectResponse
 @app.get("/download")
 async def download_app():
     return RedirectResponse(
-        url="https://github.com/KingAsan/media-ai-diploma/releases/download/mediaAI/MediaAI.exe",
+        url="https://github.com/KingAsan/media-ai-diploma/releases/download/MediaAI/MediaAI.exe",
         status_code=302
     )
 
@@ -317,6 +317,7 @@ def get_chat_history(
 
 if __name__ == "__main__":
     uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
+
 
 
 
