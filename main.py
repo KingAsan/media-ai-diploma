@@ -198,14 +198,13 @@ async def healthcheck():
     }
 
 
+from fastapi.responses import RedirectResponse
+
 @app.get("/download")
 async def download_app():
-    download_file = resolve_download_file()
-    if not download_file:
-        raise HTTPException(
-            status_code=404,
-            detail="Файл приложения не найден. Добавь MediaAI.exe в dist/MediaAI/ или dist/",
-        )
+    return RedirectResponse(
+        "https://github.com/KingAsan/media-ai-diploma/releases/download/mediaAI/MediaAI.exe"
+    )
 
     return FileResponse(
         path=download_file,
@@ -323,3 +322,4 @@ def get_chat_history(
 
 if __name__ == "__main__":
     uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
+
