@@ -1,34 +1,13 @@
 import webview
-import threading
-import uvicorn
-import time
-import sys
-import os
 
+URL = "https://media-ai-diploma.onrender.com"
 
-from main import app 
-
-def run_server():
-    
-    uvicorn.run(app, host="127.0.0.1", port=8000, log_level="error")
-
-if __name__ == '__main__':
-    
-    t = threading.Thread(target=run_server)
-    t.daemon = True
-    t.start()
-
-    
-    time.sleep(1)
-
-    
-    window = webview.create_window(
-        title='AI Media Universe', 
-        url='http://127.0.0.1:8000', 
-        width=1280, 
-        height=800,
-        min_size=(800, 600)
+if __name__ == "__main__":
+    webview.create_window(
+        "Media AI Universe",
+        URL,
+        width=1200,
+        height=800
     )
-    
-   
+
     webview.start()
